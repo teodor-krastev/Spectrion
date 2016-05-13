@@ -6,4 +6,4 @@ Spectrion is a complete program by itself, but you have to write the virtual dev
 
 Spectrion structure is transparent, object oriented and easily extendable. As it is Spectrion is suitable for visualization of mass-specs, some data processing and PCA/MD classification (one-class classifier kind). A separate application PCA detective is designed to create and optimize PCA training sets for classification of mass-spectra in Spectrion. The original aim Spectrion was to be used for data acquisition and instrument control in mass spectrometry (hence the name - SPECTRometry of IONs). Although its main application area is still MS, it can be used for wide variety of data acquisition/automation purposes.
 
-Website with screenshots at http:/sicyon.com/?pg=software/spectrion
+Website with screenshots at http://sicyon.com/?pg=software/spectrion
