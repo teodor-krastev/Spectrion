@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>The device layer</title>
+</head>
+
+<body>
+
+<h3>
+
+<strong>The device rack</strong>
+</h3>
+<hr size="1">
+<p><img border="0" src="images/dvc_rack.gif" align="right" hspace="7">The devices rack is lowest
+(deepest) layer from the final (graphical) presentation point of view. This
+layer is shown on the right of your screen where each virtual device is presented as
+separated &quot;child&quot; window into the device container window (device
+rack). The user can control each device manually and see the results from
+measurements. There are three types of devices –
+measurement (MD), control (CD) and synchro types. Synchro (short from
+synchronization) device is only one, but another two types could be as many as
+needed. One could say that measurement device is input device and control
+device is output one and that would be no far from the truth (see Glossary for
+definitions). Each type provides standard set of commands called by the
+interpreter. Your real (external) devices are presented by these
+&quot;logical&quot; devices the same way as in &quot;good old&quot; DOS you can
+assign a directory to logical drive. One real device could be presented by more
+than one logical device. If the external device is really complex and has both
+measurement and control functions, the only way to &quot;plug&quot; it into the
+Spectrion is to present it as two logical devices - one for the control functions and
+one for measurement ones. Each logical device (device for short) is presented in
+Spectrion in two ways. First way is visual, in separate window (form in Delphi) with
+visual components, which represent different device features. There, the user
+can operate manually with these features, setting for example the most
+appropriate parameters for the next measurement. </o:p>
+</p>
+<p>Each device has in four states: <o:p>
+ </o:p>
+</p>
+<ul>
+	<li>off-line
+(white-cream banner) – before initialization<o:p> </o:p>(connection)</li>
+	<li>standby (grey
+banner) – after initialization, but not running yet</li>
+	<li>running (teal
+banner) – working state</li>
+	<li>warning (yellow
+banner)– as running but with warning that one or more of controlled parameter
+are out of range.</li>
+	<li>danger - the device goes
+in standby state due to a dangerous conditions</li>
+</ul>
+<p>To understand better what
+measurement or control devices are follow the three lists of commands which
+define internal interface between interpreter and device in Appendix B.<o:p>
+ </o:p>
+</p>
+<p>Each device has three pages
+(tabs) –<o:p>
+ </o:p>
+</p>
+<ul>
+	<li><span style="font-weight: 700">Normal</span> page for
+minimised presentation of device functionality - minimum space, without lost of
+control or information.<o:p> </o:p></li>
+	<li>The purpose of
+<b>extended </b>page is visual comfort. Each functionality of a device is presented by full
+colour visual components, for easy manipulation (e.g dials, sliders) and nicer 
+signal visualization (e.g. charts, progress bars).<o:p> </o:p></li>
+	<li>Third page
+is for opening/saving or some adjustments of the
+device <b>setting</b>. Each saved device setting file has an extension of the 
+	device name (three charatcters). When initialized the device (e.g. DVC) 
+	would look for Defaults.DVC file to load its setting from.</li>
+</ul>
+<p>On the top of device rack 
+there are some buttons to operate it. The green long button on the right is the main switch (of 
+the device rack). On the left next is lock/unlock button to enable/disable user control to 
+the devices, next two buttons are for loading/saving the device rack setting 
+(complete set of all devices settings), and the last three buttons allows the user to turn 
+all the device pages simultaneously.</p>
+<p>There are two modes of
+synchronization synchro mode and asynchro mode. In the synchro mode the pointer
+of the data buffer is transferred into the measurement device and then that
+device is taking care for synchronization – usually immediately after the
+measurement is done the buffer is updated. That is so called Data stream mode,
+(fastest possible) with sacrifice of control – nothing else could be changed
+synchronically. Visually it is presented by redish small panel under the synchro
+device. In asynchro mode the synchronization of the measurement is done by
+synchro device, each time the measurement needs synchronization the procedure
+takes it from there. The possible ways to synchronization are: by button, delay
+or external event.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=..\bin\Spectrion.chm
+Contents file=Table of Contents.hhc
+Default topic=introduction.htm
+Display compile progress=No
+Index file=Index.hhk
+Language=0x1009 English (Canada)
+
+
+[FILES]
+control_device.htm
+device_layer.htm
+general_commands.htm
+glossary.htm
+interpreter_commands.htm
+introduction.htm
+measurement_device.htm
+menu.htm
+procedures.htm
+run_menu.htm
+structure.htm
+synchronization_device.htm
+command_centre.htm
+uni_scan.htm
+options.htm
+simple_scan.htm
+autotune.htm
+pca_classification.htm
+theoplot.htm
+spcn_as_com_server.htm
+under_dev.htm
+
+[ALIAS]
+#include alias.h
+
+[MAP]
+#include topics.h
+
+[INFOTYPES]
+

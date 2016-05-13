@@ -1,0 +1,271 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{B278868A-0997-42BC-9F3D-807BDF0A9709}</ProjectGuid>
+			<MainSource>Spectrion.dpr</MainSource>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<TargetedPlatforms>1</TargetedPlatforms>
+			<AppType>Application</AppType>
+			<FrameworkType>VCL</FrameworkType>
+			<ProjectVersion>13.4</ProjectVersion>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+			<Base_Win64>true</Base_Win64>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+			<Cfg_2_Win32>true</Cfg_2_Win32>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<DCC_ImageBase>00400000</DCC_ImageBase>
+			<VerInfo_Build>32</VerInfo_Build>
+			<VerInfo_Keys>CompanyName=Teodor Krastev;FileDescription=Data Acquisition for Mass Spectrometry;FileVersion=1.0.0.32;InternalName=Spectrion;LegalCopyright=Teodor Krastev;LegalTrademarks=;OriginalFilename=Spcn;ProductName=Spcn;ProductVersion=1.0;Comments=under development</VerInfo_Keys>
+			<DCC_UsePackage>vcl;rtl;dbrtl;adortl;vcldb;vclx;bdertl;vcldbx;ibxpress;dsnap;cds;bdecds;qrpt;visualclx;visualdbclx;dsnapcrba;dsnapcon;VclSmp;vclshlctrls;vclie;xmlrtl;inet;inetdbbde;inetdbxpress;inetdb;nmfast;webdsnap;websnap;soaprtl;dbexpress;dbxcds;indy;dclOffice2k;TeeUI;Tee;TeeDB;TeeLanguage;TeePro;TeeQR;TeeGL;dss;$(DCC_UsePackage)</DCC_UsePackage>
+			<DCC_MapFile>3</DCC_MapFile>
+			<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;VCLTee;System.Win;$(DCC_Namespace)</DCC_Namespace>
+			<DCC_ExeOutput>D:\WORK\sPCN\Bin</DCC_ExeOutput>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<DCC_K>false</DCC_K>
+			<DCC_F>false</DCC_F>
+			<DCC_S>false</DCC_S>
+			<DCC_N>true</DCC_N>
+			<DCC_DcuOutput>D:\WORK\Spcn\dcu</DCC_DcuOutput>
+			<DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+			<DCC_E>false</DCC_E>
+			<VerInfo_Locale>4105</VerInfo_Locale>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win64)'!=''">
+			<Icon_MainIcon>Spcn_Icon.ico</Icon_MainIcon>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<Icon_MainIcon>Spcn_Icon.ico</Icon_MainIcon>
+			<DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+			<DCC_DebugInformation>false</DCC_DebugInformation>
+			<DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+			<DCC_MaxStackSize>16048576</DCC_MaxStackSize>
+			<VerInfo_MinorVer>9</VerInfo_MinorVer>
+			<VerInfo_Build>34</VerInfo_Build>
+			<VerInfo_MajorVer>0</VerInfo_MajorVer>
+			<Icon_MainIcon>Images\SIcon128.ico</Icon_MainIcon>
+			<DCC_UnitSearchPath>G:\Programs\Spectrion;G:\Programs\Spectrion\PlotSp;G:\Programs\Spectrion\Procs;G:\Programs\Spectrion\PCA;G:\Programs\Spectrion\Devices;G:\Programs\Spectrion\Utils;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+			<VerInfo_Keys>CompanyName=Teodor Krastev;FileDescription=Spectrion;FileVersion=0.9.0.34;InternalName=Spectrion;LegalCopyright=Teodor Krastev;LegalTrademarks=Teodor Krastev;OriginalFilename=Spectrion;ProductName=Spectrion;ProductVersion=0.9.0.34;Comments=open source freeware</VerInfo_Keys>
+			<DCC_ExeOutput>G:\Programs\Spectrion\Bin\</DCC_ExeOutput>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<DCC_DcuOutput>G:\Programs\Spectrion\dcu</DCC_DcuOutput>
+		</PropertyGroup>
+		<ItemGroup>
+			<DelphiCompile Include="$(MainSource)">
+				<MainSource>MainSource</MainSource>
+			</DelphiCompile>
+			<DCCReference Include="SpionU.pas">
+				<Form>frmSpion</Form>
+			</DCCReference>
+			<DCCReference Include="CmdShellU.pas">
+				<Form>frmCmdShell</Form>
+			</DCCReference>
+			<DCCReference Include="CmdCentreU.pas">
+				<Form>frmCmdCentre</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="DvcRackU.pas">
+				<Form>frmDvcRack</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Devices\DvcShellU.pas">
+				<Form>frmDvcShell</Form>
+			</DCCReference>
+			<DCCReference Include="Devices\DeviceU.pas">
+				<Form>dDevice</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="PlotSp\PlotU.pas">
+				<Form>frmPlot</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="PlotSp\PlotCollectU.pas"/>
+			<DCCReference Include="Devices\MsrDeviceU.pas">
+				<Form>msrDevice</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Devices\CtrlDeviceU.pas">
+				<Form>ctrlDevice</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Devices\DataStreamU.pas">
+				<Form>fmDataStm</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="OptionsU.pas">
+				<Form>frmOptions</Form>
+			</DCCReference>
+			<DCCReference Include="Devices\MsrDevice1U.pas">
+				<Form>msrDevice1</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Devices\SynchroU.pas">
+				<Form>fmSynchro</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="PlotSp\DelphiDeclarations.pas"/>
+			<DCCReference Include="PlotSp\SpecU.pas"/>
+			<DCCReference Include="PlotSp\SpOptU.pas"/>
+			<DCCReference Include="PlotSp\SpMathU.pas"/>
+			<DCCReference Include="PlotSp\vChartU.pas">
+				<Form>vChart</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Procs\FitEngU.pas"/>
+			<DCCReference Include="PlotSp\PeakU.pas"/>
+			<DCCReference Include="Procs\ProcU.pas">
+				<Form>fmProc</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Procs\SimpleScanU.pas">
+				<Form>fmSimpleScan</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Procs\UniScanU.pas">
+				<Form>fmUniScan</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Procs\AutoTuneU.pas">
+				<Form>fmAutoTune</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Utils\HKProgressBr.pas">
+				<Form>ProgressForm</Form>
+			</DCCReference>
+			<DCCReference Include="AboutU.pas">
+				<Form>frmAbout</Form>
+			</DCCReference>
+			<DCCReference Include="Utils\BMDSpinEdit.pas"/>
+			<DCCReference Include="Devices\CtrlDevice1U.pas">
+				<Form>ctrlDevice1</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Devices\AutoTuneSimulU.pas"/>
+			<DCCReference Include="Procs\SCopyU.pas">
+				<Form>fmSmartCopy</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Procs\PCAprocU.pas">
+				<Form>fmPCAproc</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="Procs\TrainingU.pas">
+				<Form>frmOpts</Form>
+			</DCCReference>
+			<DCCReference Include="Procs\PCAmathU.pas"/>
+			<DCCReference Include="PlotSp\MassLynxReadU.pas"/>
+			<DCCReference Include="PlotSp\mzML110.pas"/>
+			<None Include="Spectrion.todo"/>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Delphi.Personality>
+					<Source>
+						<Source Name="MainSource">Spectrion.dpr</Source>
+					</Source>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">32</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">4105</VersionInfo>
+						<VersionInfo Name="CodePage">1252</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName">Teodor Krastev</VersionInfoKeys>
+						<VersionInfoKeys Name="FileDescription">Data Acquisition for Mass Spectrometry</VersionInfoKeys>
+						<VersionInfoKeys Name="FileVersion">1.0.0.32</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName">Spectrion</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalCopyright">Teodor Krastev</VersionInfoKeys>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename">Spectrion</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductName">Spectrion</VersionInfoKeys>
+						<VersionInfoKeys Name="ProductVersion">1.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments">under development</VersionInfoKeys>
+					</VersionInfoKeys>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\svnide160.bpl">Embarcadero Subversion Integration</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\applet160.bpl">Embarcadero Control Panel Applet Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclact160.bpl">Embarcadero ActionBar Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclsmpedit160.bpl">Embarcadero Editor Script Enhancements</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcltouch160.bpl">Embarcadero Touch Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\Embarcadero\TeeChart 2011 for RAD XE2\Delphi16.win32\Bin\DclFMXTeePro916.bpl">TeeChart Pro 2011 for FireMonkey Components</Excluded_Packages>
+						<Excluded_Packages Name="C:\Program Files (x86)\Embarcadero\TeeChart 2011 for RAD XE2\Delphi16.iOS\Bin\DclFMITeePro916.bpl">TeeChart Pro 2011 for FireMonkey iOS Components</Excluded_Packages>
+					</Excluded_Packages>
+				</Delphi.Personality>
+				<Platforms>
+					<Platform value="Win64">False</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+				<ActiveXProjectInfo>
+					<version>1</version>
+				</ActiveXProjectInfo>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>

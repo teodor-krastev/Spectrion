@@ -1,0 +1,53 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>Interpreter commands syntax</title>
+</head>
+
+<body>
+
+<h3><b>
+<span lang="en-ca" style="mso-ansi-language:FR-CA">Interpreter commands</span></b></h3>
+<hr size="1">
+<p>The
+developer will need the following to write procedures, which call the devices
+through the interpreter.</p>
+<p>The
+syntax is NOT case sensitive.</p>
+<p>The
+names of devices - three characters beginning with letter (e.g. PRL, CT0)</p>
+<p>without
+reserved names 'Snh' ; 'Itr' and ‘SP#’</p>
+<ul>
+	<li>R : floating point number</li>
+	<li>N :
+integer number</li>
+	<li>LN
+: long integer</li>
+	<li>B :
+boolean</li>
+	<li>Filename,
+mode, Text : string</li>
+	<li># : * or alphanumerical symbol (in 1..9,A..Z order)</li>
+</ul>
+<p>if
+Filename does not include a path then configuration path (application path + 
+\User\Config\)
+is assumed</p>
+<p>if
+Filename is empty then the &quot;Defaults.&lt;DeviceName&gt;&quot; device name is assumed<span style="font-size:10.0pt;font-family:Arial"><o:p></o:p></span>.
+</p>
+
+<p>&nbsp;</p>
+<p>Remote use:</p>
+<p>In case of success the executed command returns either 'OK' or measured/set
+value , otherwise it returns 'Error:' with optional error description.</p>
+
+</body>
+
+</html>

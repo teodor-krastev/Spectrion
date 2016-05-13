@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>SpecPlot</title>
+</head>
+
+<body>
+
+<h3>
+
+<b>TheoPlot</b></h3>
+<hr size="1">
+
+<p>The purpose of TheoPlot is to present data in visual way and feedback information to the
+procedures layer. TheoPlot provides features for visualization and some simple
+data processing of the data.</p>
+<p><span lang="EN-US">
+<img src="images/specpl3.jpg" v:shapes="_x0000_i1025" width="623" height="414" align="right"><!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="PBrush" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1107675320">
+ </o:OLEObject>
+</xml><![endif]-->
+</span></p>
+<p>&nbsp;</p>
+<p>TheoPlot
+has two panels, top one for TIC (total ion current) chromatographic data&nbsp; and
+bottom one for MS (mass-spectrum) spectrum they both have similar control. The
+three long button on the right side are for opening additional tabbed menus for
+Chrom, Mass or common. If the user presses Chrom or Mass Button with the right
+mouse button the respective panel becomes hidden, but all the data are intact.</p>
+<p>The principal features
+are available through the toolbar on the left and include:</p>
+<ul>
+	<li>
+	<span style="font-style:normal; font-variant:normal; font-weight:normal; mso-bidi-font-family:Arial">&nbsp;</span>Unzoom button –
+retrieve full view of the spectrum<o:p> </o:p></li>
+	<li>
+	<span style="font-style:normal; font-variant:normal; font-weight:normal; mso-bidi-font-family:Arial">&nbsp;</span>AutoY – if on,
+when the user zoom the Y scale is adjusted automatically.<o:p> </o:p>
+	</li>
+	<li>
+	<span style="font-style:normal; font-variant:normal; font-weight:normal; mso-bidi-font-family:Arial">&nbsp;</span>Zoom – Zoom and
+Range to button are alternative. Zoom mode is for zooming the spectrum by press
+and drop mouse routine. With the right mouse user can move the spec by
+drag&amp;drop.</li>
+	<li>The range mode allows the user to select one or more
+regions (ranges) which will be presented in the other panel. When the user press
+the left mouse button and drag along the spec the respective area is selected.
+If user press and release the left mouse button, only single mass is selected,
+if during single mass selection the user hold Shift button the value under round
+green marker is selected. If the user double click within a peak the whole peak
+is selected. If the user hold Ctrl button when selected the new range list is
+set (the old one is deleted).</li>
+	<li>Table button –
+shows the values of the spectrum (and peaks if the option is on) in a table(s)<span style="font-size:10.0pt;font-family:Arial"><o:p></o:p></span>,
+On the top of the&nbsp;tables there are two pairs of buttons for saving / 
+copying tables in file / clipboard.
+</li>
+	<li>Smoothing button
+provides smoothing of the spectrum with desired factor.<o:p>
+Standard method is similar to that used in GRAMS, first derivative method is 
+fast and versatile, but gives no peak boundaries, the last one (adaptive) 
+readjust peaking by the mass scale.&nbsp;
+</o:p></li>
+	<li>Baseline
+correction subtracts a baseline replacing the value under the threshold with
+value 1. 
+	<o:p>The auto option is trying to calculate the baseline level using simplified GIFTS 
+algorithm (linear, two-steps)
+</o:p></li>
+	<li>Peaking button
+labels the peak value of the spectrum; there are three different modes of
+peaking – standard (similar to GRAMS), first derivative and adaptive. The last one
+is adaptive to the X-scale of the chart and shows different number of peak when
+the user zooms.</li>
+</ul>
+<p>The user can adjust range,
+smoothing, baseline and peaking parameters from a secondary tabbed panel which
+appears when the right long button is pressed. Any change of any parameter is
+immediately takes effect, so the user can adjust them following the changes they
+cause.<span style="mso-spacerun: yes">&nbsp;The tabbed options on the right
+appear when the user&nbsp;presses </span>
+smoothing, baseline or peaking with the right mouse button.</p>
+
+<p>TheoPlot component
+is based on
+TeeChart graphics component by <font color="#000000">Steema Software SL.</font></p>
+
+</body>
+
+</html>

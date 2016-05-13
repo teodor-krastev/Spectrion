@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>Autotune</title>
+</head>
+
+<body>
+
+<h3><b>Autotune procedure</b></h3>
+<hr size="1">
+<p style="margin-left:0in;text-indent:0in"><b><a name="_Toc25995716"><span lang="EN-US">Purpose</span></a></b></p>
+<p><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+The purpose of this procedure is to provide the user with auto-tuning
+functionalities. </span></p>
+<p><b>Optimization page</b></p>
+
+<p>
+<img border="1" src="images/autotuneo.gif" align="right" hspace="7"></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Optimization
+method radio button</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+The user can choose between the following methods:</span></p>
+<ol style="line-height: 150%">
+	<li><span lang="EN-US">Initial seek (in blind). Conditions: There is no signal visible, so the
+autotune will try all combinations of the set control device parameter/channel 
+	values.</span></li>
+	<li><span lang="EN-US">Consecutive scanning. Conditions: The signal is visible, but the noise is
+more than 5% of the signal.</span></li>
+	<li><span lang="EN-US">Simplex optimization. Conditions: The signal is visible and the noise is
+less than 5% of the signal. Simplex is much faster
+than consecutive scanning, but require stable signal (good S/N ratio) </span>
+	</li>
+</ol>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Control
+device combo box</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>&nbsp;
+</o:p>
+Selects the control device which will be tuned for signal optimization.</span></p>
+<p style="margin-left:0in;text-indent:0in"></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Control
+device’s Channel number control</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>&nbsp;
+</o:p>
+Sets the control device’s channel number. For the correspondence channel -&gt; 
+device parameter, see the help for each particular device.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>From control 
+field</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>&nbsp;
+</o:p>
+Set the starting value for the device parameter/channel to be tuned.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>To control 
+field</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>&nbsp;
+</o:p>
+Sets the finishing value for the device parameter/channel to be tuned.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Step control 
+field</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>&nbsp;
+</o:p>
+Sets the step value between value in From to To.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Number of
+control devices radio button</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>&nbsp;
+</o:p>
+Sets the number of control devices to be tuned. Depending of the autotune method 
+the device's parameters are used in combination (first and third methods) or 
+consecutively (second method). </span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Measurement
+device combo box</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>&nbsp;
+</o:p>
+Selects the measurement device where the signal will be taken from.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Measurement
+device’s Channel number control</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+Set’s the measurement device’s channel number.</span></p>
+<p>Before each measurement the synchro device is advised for synchronization, so 
+the user can cancel the procedure from there. The setting of synchro device 
+should be about Delay 500 to assure the new parameter value is established before 
+the next measurement is taken.</p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Intensity radio
+button</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+The user can choose between total and peak intensity for signal to be optimized 
+upon. If peak is chosen the peak in the peak limits is fit with gauss function 
+and the amplitude is used for intensity optimization and peak width - for 
+resolution optimization.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Peak
+controls</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+Set the interval within the peak will be searched for. These are required when 
+the resolution is optimized or peak intensity is selected.</span></p>
+<p><span lang="EN-US"><b>
+<span style="font-style: normal; font-variant: normal; font-size: 7.0pt; ">&nbsp;</span>Intensity/Resolution
+control</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>
+</o:p>
+Sets the intensity/resolution weight. Mathematically only one value can be 
+optimized at the time, so if the user wish to optimize the sensitivity and resolution at the 
+same time he must specify the ratio of importance between these two.</span></p>
+<hr size="1">
+<p><img border="1" src="images/autotunev.gif" align="right" hspace="7"><b>Verification page</b></p>
+<p></p>
+<p>At verification page the quality of the signal is verified using as reference 
+previous measured best quality possible mass-spec. </p>
+<p>From the button on the top the user can choose reference mass-spec.&nbsp; 
+From the group bellow the measurement device is set. After the execution of the 
+procedure the &quot;distance&quot; between measured and reference mass-spec is calculated 
+by the same formula used in NIST'98 library search.</p>
+<p>&nbsp;</p>
+<p>On the bottom of the autotune window there is a utility for saving / 
+reloading the setting of the procedure.</p>
+
+<hr size="1">
+
+<p>
+<span style="mso-fareast-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA" lang="EN-US">Remote
+call: Autotune </span></p>
+
+</body>
+
+</html>

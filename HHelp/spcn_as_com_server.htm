@@ -1,0 +1,83 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+<title>Spectrion as COM server</title>
+</head>
+
+<body>
+
+<h3><b>Spectrion as COM server</b></h3><hr size="1">
+<p>The connection to Spectrion is thru COM standard of Windows. The properties and
+methods should be visible immediately after importing &quot;Spectrion.tlb&quot; into
+your program environment, in some program languages special care for event
+handling should be taken.</p>
+<p>The example project SpcnClient (source included) demonstrates the abilities
+of Spectrion as COM server. Notice that for Command and Procedur methods separate
+threads are created to keep user interface free for user access and especially
+for Abort button (and method).</p>
+<p><b><u>Properties</u></b></p>
+<p><b><i>ExePath</i></b>: WideString, read-only</p>
+<p>&nbsp;&nbsp;&nbsp; Get back the full path to Spectrion.exe, usually needed to find the directory for
+scans, tunes etc.</p>
+<p>&nbsp;&nbsp;&nbsp; The version number of Spectrion should be checked as well - Itr.ShwVer</p>
+<p><b><u>Methods</u></b></p>
+<p><b><i>Command</i></b>(var InOutText: WideString; out Success: WordBool);</p>
+<p>&nbsp;&nbsp;&nbsp; Execute one command from Spectrion script&nbsp;&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; InOutText contents the command (including the parameters) according Spectrion
+script syntax and gets back the result from execution of the command. Success is
+true when the execution is successful and vice verce.</p>
+<p><b><i>Procedur</i></b>(const WhichProc, PrmList: WideString);</p>
+<p>&nbsp;&nbsp;&nbsp; Execute a specific procedure with parameters list in a setting file with name
+in &quot;PrmList&quot;.</p>
+<p>&nbsp;&nbsp;&nbsp; Possible procedures:</p>
+<p><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UniScan</i></b>, setting file extension -&gt; '.scn', directory -&gt;
+RootPath+'Scan\'</p>
+<p><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AutoTune</i></b>, setting file extension -&gt; '.tun', directory -&gt;
+RootPath+'Scan\'</p>
+<p><b>Abort</b></p>
+<p>&nbsp;&nbsp;&nbsp; Closes all the data streams and simulates pressing Stop button on Synchro
+device</p>
+<p><b><i>GetSpec</i></b>(Num: Integer; var SpecX, SpecY: OleVariant);</p>
+<p>&nbsp;&nbsp;&nbsp; returns the mass-spec of Num plot as two arrays of double (0-based);&nbsp;</p>
+
+<p>&nbsp;&nbsp;&nbsp; if Num&lt;0 then the active plot is returned</p>
+
+<p><b><u>Events</u></b></p>
+
+<p><b>EventCommand</b>(const Cmd: WideString; const Reply: WideString); dispid 1;</p>
+
+<p>&nbsp;&nbsp;&nbsp; Spectrion fires that event when the command from Spectrion script has been executed,
+&quot;Cmd&quot; is the command itself and &quot;Reply&quot; is the answer.</p>
+
+<p><br>
+<b>EventDvcState</b>(const DvcName: WideString; OldSt: Integer; NewSt: Integer); dispid 2;</p>
+<p>&nbsp;&nbsp;&nbsp;
+Spectrion fires that event, if any of the devices has been changed its state. &quot;DvcName&quot;
+is the name of the device</p>
+
+<p>&nbsp;&nbsp;&nbsp; and OldSt (old state)/ NewSt (new state) are coded as follow:</p>
+
+<p>&nbsp;&nbsp;&nbsp; 0 - None: blue caption, undefined initial state<br>
+&nbsp;&nbsp;&nbsp;
+1 - OffLine:&nbsp;&nbsp; white caption, initialization did not pass either
+because device has been switched Off from Options or there is no connection to
+the real device<br>
+&nbsp;&nbsp;&nbsp;
+2 - Standby:&nbsp;&nbsp; inactive caption, all tensions '0' and NO remotely access<br>
+&nbsp;&nbsp;&nbsp;
+3 - Running:&nbsp;&nbsp; active caption, normal state<br>
+&nbsp;&nbsp;&nbsp;
+4 - Warning:&nbsp; yellow caption, as Running but with warning<br>
+&nbsp;&nbsp;&nbsp;
+5 - Danger:&nbsp;&nbsp;&nbsp; red caption, switches to Standby internal state
+due to dangerous conditions<br>
+</p>
+
+</body>
+
+</html>

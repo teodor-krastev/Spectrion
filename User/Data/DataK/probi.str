@@ -1,0 +1,27 @@
+[Preprocess]
+Normalize=1
+MeanExtract=0
+LowLimit=60
+HighLimit=999
+Precision=6
+Baseline=1
+BaselineOn=0
+MassBins=1
+BaseGrp=toto
+
+[Ignored Ranges]
+
+[Memo]
+
+[Groups]
+aba.sgr=
+cam.sgr=
+fou.sgr=
+lim.sgr=
+mali.sgr=
+noli.sgr=
+noy.sgr=
+omi.sgr=
+stiga.sgr=
+tet.sgr=
+toto.sgr=

@@ -1,0 +1,4 @@
+SMN.DimGet("Abs")
+>Error:The main switch is OFF
+SMN.DimGet("Abs")
+>Units are us

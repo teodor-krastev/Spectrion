@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>Synchronization Device</title>
+</head>
+
+<body>
+
+<h3><b>Synchro
+Device</b></h3>
+
+<hr size="1">
+
+<p>Fixed
+(reserved) name <b>&quot;Snh&quot;</b></p>
+<p><i><span lang="FR-CA" style="mso-ansi-language:FR-CA">Snh.ModSet(mode)</span></i><span lang="FR-CA" style="mso-ansi-language:FR-CA"><o:p>
+</o:p>
+</span></p>
+<ul>
+	<li>mode='Pass'
+return synchronization unconditionally</li>
+	<li>mode='Dly=#'
+return synchro after # [ms]</li>
+	<li>mode='Ext[=#]'
+return synchro after event number # happened, if
+'=#' is omitted then last used event is used</li>
+	<li>mode='Btn'
+return synchro after pressing the synchro button</li>
+</ul>
+<p><i>Snh.ModGet</i></p>
+<p>&nbsp;&nbsp;&nbsp; Return
+currently active mode</p>
+<p><i>Snh.SnhGet(md)</i></p>
+<ul>
+	<li>md&lt;0
+synchro with event #md</li>
+	<li>md&gt;0
+synchro after md [ms]</li>
+	<li>md=0
+synchro according default mode</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp; Return
+control after synchronization<o:p>
+</o:p>&nbsp;<o:p>
+</o:p>
+</p>
+<p><i>Snh.SDSOpn(md,pl)<o:p>
+</o:p>
+</i></p>
+<ul>
+	<li>Md
+– name of measurement device<o:p> </o:p></li>
+	<li>Pl
+– designation plot for data display, if empty then new one is created<o:p> </o:p>
+	</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp; Open
+synchro data stream (SDS) and start the acquisition (self-synchronization)<o:p>
+&nbsp;</o:p><o:p>gets back the number of
+the opened channel</o:p>
+</p>
+<p><i>Snh.ADSOpn(md,pl)<o:p>
+</o:p>
+</i></p>
+<ul>
+	<li>Md
+– name of measurement device<o:p> </o:p></li>
+	<li>Pl
+– designation plot for data display, if empty then new one is created<o:p> </o:p>
+	</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp; Open
+asynchro data stream (ADS) and wait for DChGet command for the next cycle of acquisition<o:p>
+</o:p><o:p>
+gets back the number of
+the opened channel</p>
+<p><i>Snh</i>.DSmGet<i>(Idx)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Get
+next spectrum thru an open Idx asynchro data stream</p>
+</o:p>
+<p><i>Snh.DSmCls(Idx)</i></p>
+
+<p><i>&nbsp;&nbsp;&nbsp; Close data steam with
+Idx number<o:p>
+</i></p>
+
+</body>
+
+</html>

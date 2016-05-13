@@ -1,0 +1,139 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+<title>Control Device</title>
+</head>
+
+<body>
+
+<h3><b>Control
+Device [CD]</b></h3>
+<hr size="1">
+<p>Control device is abstract presentation of real device which control some 
+parameters of your setup. Typical examples could be high voltage controller, 
+waveform generator, or step-motor controller. In any case the principal function 
+of the device would be to set some parameter(s), even reading back the set 
+parameter should lead to actual measuring of the real thing. Each channel has 
+absolute (integer) and relative (float) after calibration position. The 
+calibration should be implemented either by external utility or within Setting 
+tab of the device. </p>
+<p>Common parameter: ChnIdx - channel number,
+the normal channels have positive numbers, '0' is switchable and correspond to
+the default channel. The negative numbers correspond to Boolean channels 1-true/
+0-false</p>
+<p><i>CD.IniSet</i></p>
+<p>&nbsp;&nbsp;&nbsp; (re)Initiate
+the device using setting in file &quot;Defaults.CD&quot; (if the file exists) or hard setting otherwise,
+the device state after IniSet is OffLine. Returns 'OK' or 'Error'.</p>
+<p><i>CD.EnbGet&nbsp;</i></p>
+<p>&nbsp;&nbsp;&nbsp; Check if
+the device is enabled (is it connected and switched on). Returns 'True' / 'False'</p>
+<p><i>CD.EnbSet(B)&nbsp;</i></p>
+<p>&nbsp;&nbsp;&nbsp; Switch device to Running
+/ StandBy state ( B is true/false). Returns
+'OK' or 'Error'.</p>
+<p><i>CD.DftSet(<em>ChnIdx</em>)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Set
+default control channel index to N,&nbsp;
+</p>
+<p>&nbsp;&nbsp;&nbsp; Get back the default
+channel number, if N=0
+it does not change default channel just gives it back.
+</p>
+<p>&nbsp;&nbsp;&nbsp; Returns 'OK' or 'Error'.&nbsp;</p>
+<p>If
+ChnIdx is omitted default channel index is assumed<o:p>
+ for the next commands.</o:p>
+</p>
+<p><i>CD.AbsGet([<em>ChnIdx]</em>)<o:p>
+</o:p>
+</i></p>
+<p><span style="mso-bidi-font-size: 12.0pt; ">&nbsp;&nbsp;&nbsp; Gets
+back the last demander absolute position&nbsp;or </span><span style="mso-bidi-font-size: 12.0pt; ">
+returns </span><span style="mso-bidi-font-size: 12.0pt; ">'Error'</span></p>
+<p><i>CD.RelGet( [<em>ChnIdx]</em>)<o:p>
+</o:p>
+</i></p>
+<p><span style="mso-bidi-font-size: 12.0pt; ">&nbsp;&nbsp;&nbsp; Gets
+back the last demander relative position&nbsp;or </span><span style="mso-bidi-font-size: 12.0pt; ">
+returns</span><span style="mso-bidi-font-size: 12.0pt; "> 'Error'</span></p>
+<p><i>CD.MsrGet( [<em>ChnIdx]</em>)<o:p>
+</o:p>
+</i></p>
+<p><span style="mso-bidi-font-size: 12.0pt; ">&nbsp;&nbsp;&nbsp; Measure
+and gets back relative position&nbsp;or returns 'Error'</span></p>
+<p><span style="mso-bidi-font-size:
+12.0pt;">
+</o:p>
+</span></p>
+<p>&nbsp;&nbsp;&nbsp; Next
+four commands control the channels of CD by absolute/ relative jumps (without or
+with calibration) to new absolute (jump) or relative (move) position.</p>
+<p>&nbsp;&nbsp;&nbsp; Returns:</p>
+<ul>
+	<li>true
+for successful jump and in LN/R is the new absolute/relative position</li>
+	<li>false
+if it is out of rande and R as min/max value of desired direction</li>
+</ul>
+<p><i>CD.AJpSet(A:
+integer<em> , [ChnIdx: integer]</em>)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Jump
+on position A in absolute units. Gets back the set 
+<span style="mso-bidi-font-size: 12.0pt; ">absolute
+position&nbsp;or 'Error'</span></p>
+<p><i>CD.RJpSet(R: float,<em> [ChnIdx: integer]</em>)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Jump
+on position R in relative units. Gets back the set 
+<span style="mso-bidi-font-size: 12.0pt; ">relative
+position&nbsp;or 'Error'</span></p>
+<p><i>CD.AMvSet(A:
+integer,<em> [ChnIdx: integer]</em>)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Move
+A absolute units forwards(+)/backwards(-). Gets back the set 
+<span style="mso-bidi-font-size: 12.0pt; ">absolute position&nbsp;or
+'Error'</span></p>
+<p><i>CD.RMvSet(R:
+float,<em>  [ChnIdx: integer]</em>)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Move
+R relative units forwards(+)/backwards(-). Gets back the set 
+<span style="mso-bidi-font-size: 12.0pt; ">relative position&nbsp;or
+'Error'</span></p>
+<p><i>CD.DvcLck(B)</i></p>
+<p>&nbsp;&nbsp;&nbsp; if
+B then lock current manual device change,</p>
+<p>&nbsp;&nbsp;&nbsp; else
+unlock current manual device change</p>
+<p>&nbsp;&nbsp;&nbsp; Returns 'OK' or 'Error'.</p>
+<p><i>CD.SetLod(FileName)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Load
+from FileName CD's settings if FileName is empty the device will be read for the
+setting or internal defaults will be loaded. Returns the loaded filename or
+'Error'.</p>
+<p><i>CD.SetSav(FileName)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Save
+into FileName CD's settings, if FileName is empty the the last loaded or default setting
+will be written. Returns the saved filename or 'Error'.</p>
+<p><i>CD.SetGet(FileName)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Gets
+back the current setting filename or 'Error'</p>
+<p><i><span lang="FR-CA" style="mso-ansi-language:FR-CA">CD.DimGet(</span><em>ChnIdx: 
+integer</em><span lang="FR-CA" style="mso-ansi-language:FR-CA">)</span></i><span lang="FR-CA" style="mso-ansi-language:FR-CA"><o:p>
+</o:p>
+</span></p>
+<p>&nbsp;&nbsp;&nbsp; Returns
+the name and respective units of the control device channel in format NAM[unit], 
+only informative.</p>
+<p><i>CD.CmdSet(Command)</i></p>
+<p>&nbsp;&nbsp;&nbsp; The
+device interprets this text Command and returns the result as text. That is open 
+text command which allows you to extend the above command set with some very 
+specific function you cannot fit in the standard command set. </p>
+
+</body>
+
+</html>

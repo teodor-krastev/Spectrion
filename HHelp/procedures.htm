@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>Procedures</title>
+</head>
+
+<body>
+
+<h3><b>
+<span style="font-size:10.0pt;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-CA;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Procedures</span></b></h3>
+
+<hr size="1">
+
+<p>Procedures
+layer communicate with the interpreter and such way with the devices only
+through text type of commands and one spectral buffer and with Plot by
+limited set of functions. The procedures contains usually a dialog box where the
+user specify what exactly he wants (e.g. Scan from...to...). The procedure
+generates a sequence of text commands to the interpreter and usually sends the
+result to TheoPlot for visual presentation.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Remotely the procedures are called by method Procedur:</p>
+
+<p>Procedur(const WhichProc: WideString; var PrmList: WideString; var Suc:
+WordBool)</p>
+
+<p>&nbsp;&nbsp;&nbsp; WhichProc - name of the procedure</p>
+
+<p>&nbsp;&nbsp;&nbsp; PrmList -&nbsp; IN - either setting file (in
+this case the parameter should start with &nbsp;&quot;file:\\&quot;) or
+individual parameter(s) in style &quot;param1=12, param2=tre&quot;&nbsp;&nbsp;</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OUT - result either as file name &quot;<a href="file://///path/filename">file:\\path\filename</a>&quot;
+or as string with the results themselves.</p>
+
+<p>&nbsp;&nbsp; Suc - true in case of success and vice versa</p>
+
+</body>
+
+</html>

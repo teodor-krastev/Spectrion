@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>General</title>
+</head>
+
+<body>
+
+<h3><b>General
+commands</b></h3>
+<hr size="1">
+<p><b>Commands to the interpreter </b>&quot;<b>Itr</b>&quot; - fixed (reserved) name </p>
+<p><i>Itr.ScrRun(FileName)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Execute Spectrion script from
+Filename. Returns 'OK' or 'Error'.</p>
+<p><i>Itr.LckSet(B)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Lock/unlock (B=TRUE/FALSE) the device rack.
+Returns 'OK' or 'Error'.</p>
+<p><i>Itr.SetLod(FileName)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Load
+all the devices settings from FileName with extension - devices names. Returns
+'OK' or 'Error'.</p>
+<p><i>Itr.SetSav(FileName)</i></p>
+<p>&nbsp;&nbsp;&nbsp; Save
+all the devices settings into FileName with extension devices names. Returns
+'OK' or 'Error'.</p>
+<p><i>Itr.ShwSet(B)</i></p>
+<p>&nbsp;&nbsp;&nbsp; if
+B then show commands and replays in interpreter window</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+stop show commands and replays in interpreter window</p>
+<p>&nbsp;&nbsp;&nbsp; Useful
+for time critical parts of data acquisition.&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp; Returns 'OK' or 'Error'.</p>
+<p><span style="font-style:italic">Itr.VerGet</span></p>
+<p>&nbsp;&nbsp;&nbsp; Gets
+back Spectrion version number as integer (e.g. 100 -&gt; v1.00)&nbsp;</p>
+<p>Itr.MsrGet</p>
+<p>&nbsp;&nbsp;&nbsp; Returns comma separated
+list of measurement devices</p>
+<p>Itr.CtrGet</p>
+<p>&nbsp;&nbsp;&nbsp; Returns comma separated
+list of control devices</p>
+<p>Itr<i>.EnbGet&nbsp;</i></p>
+<p>&nbsp;&nbsp;&nbsp; Check if
+the device rack is enabled (is it connected and switched on). Returns 'True' /
+'False'</p>
+<p>Itr<i>.EnbSet(B)&nbsp;</i></p>
+<p>&nbsp;&nbsp;&nbsp; Switch device rack to
+Running / StandBy state . Returns
+'OK' or 'Error'.</p>
+<p><i>Itr.DvRSet(B)&nbsp;</i></p>
+<p>&nbsp;&nbsp;&nbsp; The same as EnbSet but switches (visually) device rack 
+ON/OFF. Returns
+'OK' or 'Error'. Intended for data processing visualization only.</p>
+<p>//
+Text</p>
+<p>Output
+Text in interpreter window (comment). </p>
+<hr size="1">
+<p><b>Plot commands (SP) </b>- avoid devices names starting with SP (to avoid 
+confusion)</p>
+<p>The symbol after SP is <b>'*'</b> for general plot command and $ - 
+alphanumerical symbol (in order 1..9, A..Z) for particular plot.</p>
+<p><i><span style="mso-bidi-font-size: 12.0pt; ">SP*.NewSet(Template)<o:p>
+</o:p>
+</span></i></p>
+<p><span style="mso-bidi-font-size:
+12.0pt;">&nbsp;&nbsp;&nbsp; Create new plot using Template for plot setting.
+Returns the order number of created plot.<o:p>
+</o:p>
+</span></p>
+<p><span style="mso-bidi-font-size: 12.0pt; font-style:italic">SP*.ClrAll</span></p>
+<p><span style="mso-bidi-font-size:
+12.0pt;"></o:p>&nbsp;&nbsp;&nbsp; Clear all plots </span>.
+Returns 'OK' or 'Error'.</p>
+<p><span style="mso-bidi-font-size:
+12.0pt;">&nbsp;&nbsp;&nbsp; In next commands $ is the number of the plot (1..35),
+if $=’#’ then active plot is used.<o:p>
+</o:p>
+</span></p>
+<p><i><span style="mso-bidi-font-size: 12.0pt; ">SP$.Delete<o:p>
+</o:p>
+</span></i></p>
+<p><span style="mso-bidi-font-size:
+12.0pt;">&nbsp;&nbsp;&nbsp; Delete $ plot<o:p>
+&nbsp;</o:p></span><o:p>. Returns
+'OK' or 'Error'.</p>
+<p><i>
+<span style="mso-bidi-font-size: 12.0pt; mso-ansi-language: FR-CA" lang="FR-CA">SP$.VieSet(Mode)<o:p>
+</o:p>
+</span></i></p>
+<p><span style="mso-bidi-font-size:
+12.0pt;">&nbsp;&nbsp;&nbsp; Set view mode of $ plot to<o:p>
+</o:p>
+</span></p>
+<ul>
+	<li><span style="mso-bidi-font-size:
+12.0pt;">M: only mass spec<o:p> </o:p></span></li>
+	<li><span style="mso-bidi-font-size:
+12.0pt;">C: only chromatogram spec<o:p> </o:p></span></li>
+	<li><span style="mso-bidi-font-size:
+12.0pt;">B: both
+</span></li>
+</ul>
+
+<p>&nbsp;&nbsp;&nbsp; Returns 'OK' or 'Error'.<o:p><span style="mso-bidi-font-size:
+12.0pt;">
+</span></p>
+
+<p><i><span style="mso-bidi-font-size: 12.0pt; ">SP$.FilOpn(Filename)</span></i></p>
+
+<p><span style="mso-bidi-font-size:
+12.0pt;">&nbsp;&nbsp;&nbsp; </span></o:p>
+<span style="mso-bidi-font-size:
+12.0pt;">Opens PL$ under Filename (full path included),
+the plot must exist. </span>Returns
+'OK' or 'Error'.</p>
+
+<p><i><span style="mso-bidi-font-size: 12.0pt; ">SP</span></i><span style="mso-bidi-font-size: 12.0pt; "><i>$.FilSav(Filename)</i></span></p>
+
+</o:p>
+
+<p><span style="mso-bidi-font-size:
+12.0pt;">&nbsp;&nbsp;&nbsp; Saves PL$ under Filename (full path included) -
+works with HDT files only (*.R##).&nbsp; </span>Returns
+'OK' or 'Error'.</p>
+
+</body>
+
+</html>

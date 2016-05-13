@@ -1,0 +1,15 @@
+[Preprocess]
+Normalize=1
+MeanExtract=0
+LowLimit=-1
+HighLimit=-1
+Precision=5
+Baseline=0
+BaselineOn=0
+MassBins=0
+
+[Ignored Ranges]
+
+[Memo]
+
+[Groups]

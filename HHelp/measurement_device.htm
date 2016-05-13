@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>Measurement Device</title>
+</head>
+
+<body>
+
+<h3 style="mso-border-bottom-alt: solid windowtext .75pt; mso-padding-alt: 0in 0in 1.0pt 0in; border-style: none; border-width: medium; padding: 0in">
+<font face="Lucida Sans Typewriter">
+<b>Measurement Device [MD]</b></font></h3>
+<hr size="1">
+<p><font face="Lucida Sans Typewriter">The
+MD could be one of two kinds: 2D (or serial mode) – e.g. multi-channel ADC or 
+single-channel oscilloscope; or 3D (or 
+package mode)– e.g. multi-channel oscilloscope. ChnIdx (channel index) has different
+meaning for 2D and 3D MDs.</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.IniSet</i></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; (re)Initiate
+the device using loaded in advance setting or hard setting otherwise, the device
+state after command IniSet is in state &quot;OffLine&quot; . Returns 'OK' or
+'Error'.</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.EnbGet&nbsp;</i></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Checks if
+the device enabled (is it connected and switched on). Return &quot;True&quot; /
+&quot;False&quot;</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.EnbSet(B)&nbsp;</i></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Switches device to Running
+/ StandBy state (B true/false). Returns
+'OK' or 'Error'.</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.DftSet(ChnIdx)</i></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Sets
+default channel of MD to ChnIdx. Returns 'OK' or 'Error'.</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.ChnGet(ChnIdx)</i><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;
+</span>- 2D (serial mode) MD only</font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Measures
+and returns the value of ChnIdx channel, if ChnIdx is omitted then default
+channel is assumed.</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.SpcGet(ChnIdx)</i></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Measures
+and puts measured spectrum in the spectrum buffer (package). Returns 'OK' or 'Error'.</font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; ChnIdx
+specifies z-channel and it is valid only for 3D (package mode) MD, otherwise (in 
+2D) ChnIdx is ignored and all
+2D channels are transferred into the buffer (the package).</font></p>
+<p><font face="Lucida Sans Typewriter"><span style="font-style:italic">MD.DSmGet</span></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Sends next spectrum thru
+open data stream to its plot. Returns
+'OK' or 'Error'.</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.SetLod(FileName)</i></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Loads
+from FileName MD's settings if FileName is empty the device will be read for the
+setting or internal defaults will be loaded. Returns the loaded filename or
+'Error'.</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.SetSav(FileName)</i></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Saves
+into FileName MD's settings, if FileName is empty the the last loaded or default
+setting will be written. Returns the saved filename or 'Error'.</font></p>
+<p><font face="Lucida Sans Typewriter"><i>MD.SetGet(FileName)</i></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; Gets
+back the current setting filename</font></p>
+<p><font face="Lucida Sans Typewriter"><i>
+<span lang="FR-CA" style="mso-ansi-language:FR-CA">MD.DimGet(Dim)</span></i><span lang="FR-CA" style="mso-ansi-language:FR-CA"><o:p>
+</o:p>
+</span></font></p>
+<p>
+<font face="Lucida Sans Typewriter">
+<span style="mso-spacerun: yes; mso-ansi-language: FR-CA" lang="FR-CA">&nbsp;&nbsp;&nbsp;
+</span>Returns units of
+measurement, for multi-channel device and you input Dim=&quot;Abs”<span style="mso-spacerun: yes">&nbsp;
+</span>the command returns for abscissa units (along the spectrum). For
+multi-channel device N is zChn, otherwise N is a channel number.<o:p>
+</o:p>
+</font></p>
+<p><font face="Lucida Sans Typewriter"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;
+</span>That is one way to check if certain MD is multi-channel, when you ask the
+device for abscise units, multi-channel device<span style="mso-spacerun: yes">&nbsp;
+</span>will return something, but single-channel one will reply with error <o:p>
+<span lang="FR-CA" style="mso-ansi-language:FR-CA">message.</span></font></p>
+<p><font face="Lucida Sans Typewriter">
+<span lang="FR-CA" style="mso-ansi-language:FR-CA"><i>MD.CmdExe(Command)</i></span><span lang="FR-CA" style="mso-ansi-language:FR-CA"><o:p>
+</o:p>
+</span></font></p>
+<p><font face="Lucida Sans Typewriter">&nbsp;&nbsp;&nbsp; The
+device interprets this text Command and returns the result as text</font></p>
+
+</body>
+
+</html>

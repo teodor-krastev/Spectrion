@@ -1,0 +1,101 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<link rel="stylesheet" type="text/css" href="images/Spcn.css">
+
+<title>Command centre</title>
+</head>
+
+<body>
+
+<h3><b>
+<span style="mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-CA;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Command centre</span></b></h3>
+<hr size="1">
+<p>Command
+centre accommodates the interpreter and procedure frames.<o:p>
+</o:p>
+<span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">
+<img src="images/CmdCenter.gif" v:shapes="_x0000_i1025" width="224" height="573" align="right" border="1" hspace="7"></span></p>
+<p>The
+interpreter is the next layer, which communicates with procedure layer by text
+type commands and one spectrum buffer and with devices through the commands
+described.&nbsp;</p>
+<p>Any
+command can be send manually from the command box by pressing triangle button on
+the right.</p>
+<p>In
+the case of success, what is written in the script panel is NOT exactly what is
+send back internally, but more descriptive. If the command does not
+succeed the error message is sent back.</p>
+<p>The
+general command structure is:</p>
+<p>DVC.COMMAND(PARAM)</p>
+<p>where</p>
+<p>&nbsp;&nbsp;&nbsp; DVC
+is three letters name of device. There are two reserved names ITR and SHN for
+the interpreter and synchronisation device.</p>
+<p>&nbsp;&nbsp;&nbsp; COMMAND
+is six letters string. Can be any from listed below commands plus some commands
+directed to the interpreter. AS common rule the first three letters are
+associated with the object and second half of the command - with action (e.g. CHNGET – ChaNnel GET, AMVSET – Absolute MoVe SET, etc).</p>
+<p>&nbsp;&nbsp;&nbsp; PARAM
+is parameter according the particular command syntax. String type is text
+bracketed in inverted commas - &quot;. Boolean parameter is either true or
+false.</p>
+<p>The syntax of Spectrion script language is of JavaScript kind.&nbsp;</p>
+<p>Another
+important feature you have to deal with is the interpreter/device setting file.
+Each device has its own setting file and the user can save/load each setting
+file individually or<span style="mso-spacerun: yes">&nbsp;as group thru
+Itr.SetSav(Filename) command.</span></p>
+
+<p style="margin-left:0in;text-indent:0in">
+<span lang="EN-US" style="mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:
+EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA">
+<!--[if gte mso 9]><xml>
+ <o:OLEObject Type="Embed" ProgID="Paint.Picture" ShapeID="_x0000_i1025"
+  DrawAspect="Content" ObjectID="_1107675553">
+ </o:OLEObject>
+</xml><![endif]-->
+&nbsp;</span></p>
+<p style="margin-left:0in;text-indent:0in"><a name="_Toc25995701"><span lang="EN-US"><b>Purpose</b></span></a></p>
+<p><span lang="EN-US">&nbsp;&nbsp;&nbsp; The purpose of this window is to enable 
+the user to run script commands. These commands can be run manually or from a script file.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Open
+Script File button&nbsp;<o:p>&nbsp;&nbsp;&nbsp;&nbsp;
+</o:p>
+</b></span></p>
+<p><span lang="EN-US">&nbsp;&nbsp;&nbsp; Open a script file and run it.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Run From
+Clipboard button</b></span></p>
+<p><span lang="EN-US">&nbsp;&nbsp;&nbsp;
+Run the commands that have been copied to the clipboard.</span></p>
+<p style="margin-left:0in;text-indent:0in"><b><span lang="EN-US">Save Script
+button&nbsp;<o:p>
+</o:p>
+</span></b></p>
+<p><span lang="EN-US">&nbsp;&nbsp;&nbsp; Save the command in the command log edit box into a script
+file. Only the commands (and not program’s outputs) will be saved.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Copy Selection
+button</b></span></p>
+<p><span lang="EN-US">&nbsp;&nbsp;&nbsp; Copy the selection into the clipboard.</span></p>
+<p style="margin-left:0in;text-indent:0in"><b><span lang="EN-US">Run button&nbsp;<o:p>
+</o:p></span></b></p>
+<p><span lang="EN-US">&nbsp;&nbsp;&nbsp; Run the command in the command combo box.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Command combo
+box</b></span></p>
+<p><span lang="en-us">&nbsp;&nbsp;&nbsp; </span><span lang="EN-US">Write and store manual commands.</span></p>
+<p style="margin-left:0in;text-indent:0in"><span lang="EN-US"><b>Command
+Log edit box</b></span></p>
+<p><span lang="EN-US">&nbsp;<o:p>&nbsp;
+</o:p>
+Shows command and program's outputs in a chronological sequence.</span></p>
+
+</body>
+
+</html>
